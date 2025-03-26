@@ -9,7 +9,8 @@ const Navbar = () => {
 
 	const paths = [
 		// { text: 'Projects', route: '/projects' },
-		{ text: 'Skills', route: '/#skills' },
+		{ text: 'Skills', route: '/#skills', offset: 30 },
+		{ text: 'Experience', route: '/#experience', offset: 70 },
 	]
 
 	const location = useLocation()
@@ -19,8 +20,11 @@ const Navbar = () => {
 			const element = document.getElementById(location.hash.substring(1)) // Remove `#`
 			if (element) {
 				const elementPosition = element.getBoundingClientRect().top + window.scrollY
+				const offset = paths.find((o) =>
+					location.hash.toLowerCase().includes(o.text.toLowerCase())
+				)?.offset
 				window.scrollTo({
-					top: elementPosition - 30,
+					top: elementPosition - (offset || 30),
 					behavior: 'smooth',
 				})
 			}

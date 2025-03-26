@@ -1,5 +1,5 @@
 import Navbar from '../components/navbar.tsx'
-import { About, Intro, Stats, SocialMedia } from '../components/index.ts'
+import { About, Intro, Stats, SocialMedia, Experience } from '../components/index.ts'
 
 const Home = () => {
 	return (
@@ -9,6 +9,7 @@ const Home = () => {
 				<Intro />
 				<About />
 				<Stats />
+				<Experience />
 				{/* <Projects /> */}
 				<SocialMedia />
 			</div>
